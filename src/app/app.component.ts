@@ -5,6 +5,20 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
-  title = 'tronald-dump';
+  ouch: string = '';
+  status: boolean = false;
+
+  sayOuch() {
+    this.ouch = 'Oouch!';
+    setTimeout(() => {
+      this.ouch = 'That hurst!';
+      this.status = false;
+    }, 1300);
+    setTimeout(() => {
+      this.ouch = '';
+    }, 2600);
+  }  
+
 }

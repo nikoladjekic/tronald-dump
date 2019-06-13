@@ -1,0 +1,24 @@
+<div class="text-center" style="display:inline-flex">
+  <h5>Total found: &nbsp; </h5> {{ shareTagModelData[0].total }}
+  &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+  <h5>Displayed: &nbsp; </h5> {{ shareTagModelData[0].showed }}
+</div>
+
+<div class="table-responsive-sm">
+  <table class="table table-hover">
+    <tbody>
+      <tr *ngFor='let t of shareTagModelData; let i=index'>
+        <td>
+          <p>{{ t.quote }}</p>
+          <hr>
+          <p>Source: &nbsp; <a class="a" href="{{ t.source }}" target="_blank"> {{ t.source }} </a></p>
+        </td>
+        <td>
+          <p>Tag: &nbsp;{{ t.tag }}</p>
+          <br>
+          <p>{{ t.time | date:'medium' }}</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

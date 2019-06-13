@@ -1,0 +1,38 @@
+<div class="input-group mb-3 text-center">
+  <input type="text" class="form-control btn-outline-warning" placeholder="Enter search keyword"
+    aria-label="Search keyword" aria-describedby="search-keyword" [(ngModel)]="searchKeyword"
+    (keydown)="onKeydown($event, searchKeyword)">
+  <div class="input-group-append">
+    <button class="btn btn-outline-danger" type="button" (click)="findQuote(searchKeyword)">Search</button>
+  </div>
+</div>
+
+<div class="text-center" style="display:inline-flex">
+  <h5>Total found: &nbsp; </h5> {{ totalQuotesFound }}
+  &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+  <h5>Displayed: &nbsp; </h5> {{ totalQuotesShowed }}
+</div>
+<br><br> {{ emptyInputMessage }}
+
+<img class="spinner" *ngIf="loading" width="50px"
+    src="https://v1.static.betalabs.com.br/cf-201534053222/estilos/loja/loja_base/images/loader1.gif" />
+  
+
+<div class="table-responsive-sm">
+  <table class="table table-hover">
+    <tbody>
+      <tr *ngFor='let t of findQuoteModelData; let i=index'>
+        <td>
+          <p>{{ t.quote }}</p>
+          <hr>
+          <p>Source: &nbsp; <a class="a" href="{{ t.source }}" target="_blank"> {{ t.source }} </a></p>
+        </td>
+        <td>
+          <p>Tag: &nbsp;{{ t.tag }}</p>
+          <br>
+          <p>{{ t.time | date:'medium' }}</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

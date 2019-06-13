@@ -1,0 +1,13 @@
+.btn-warning {
+  margin: 5px;
+  color: rgb(44, 44, 44);
+}
+
+img {
+  outline: 0;
+}
+
+img:hover {
+  cursor: pointer;
+}
+

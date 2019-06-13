@@ -1,0 +1,17 @@
+<button class="btn btn-danger" (click)='randomQuote()'>New Tweet</button>
+
+<br><br>
+
+<img class="spinner" *ngIf="loading" width="44px"
+  src="https://v1.static.betalabs.com.br/cf-201534053222/estilos/loja/loja_base/images/loader1.gif" />
+
+<br>
+
+<div class="rdm-box" *ngIf="showBox">
+  <p>Tweet:</p>
+  <h5> {{ quote.quote }} </h5>
+  <br>
+  <p> Posted at: &nbsp; {{ quote.time | date:'medium'}} </p>
+  <p> Tags: &nbsp; {{ quote.tag }} </p>
+  <p>Source: &nbsp; <a class="a" href="{{ quote.source }}" target="_blank"> {{ quote.source }} </a></p>
+</div>

@@ -1,0 +1,18 @@
+<div class="dropdown">
+  <img *ngIf="loading2" width="30px"
+    src="https://v1.static.betalabs.com.br/cf-201534053222/estilos/loja/loja_base/images/loader1.gif" />
+  <button class="btn btn-danger" (click)='getAllTags()'> &#8675; &nbsp; Click to see all tags &nbsp; &#8675;</button>
+  <img *ngIf="loading2" width="30px"
+          src="https://v1.static.betalabs.com.br/cf-201534053222/estilos/loja/loja_base/images/loader1.gif" />
+  <div class="dropdown-content">
+    <div class="text-center">
+      <img class="spinner" *ngIf="loading" width="40px"
+        src="https://v1.static.betalabs.com.br/cf-201534053222/estilos/loja/loja_base/images/loader1.gif" />
+    </div>
+    <ol>
+      <li *ngFor='let tag of arr; let i=index' (click)='selectTag(i)'>
+        &nbsp;&nbsp; {{ tag }}
+      </li>
+    </ol>
+  </div>
+</div>

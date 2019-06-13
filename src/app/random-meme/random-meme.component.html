@@ -1,0 +1,10 @@
+<button class="btn btn-danger" (click)='getMeme()'>New Meme</button>
+
+<br>
+<img class="spinner" *ngIf="loading" width="50px"
+  src="https://v1.static.betalabs.com.br/cf-201534053222/estilos/loja/loja_base/images/loader1.gif" />
+<br>
+
+<div class="meme-box">
+  <img class="imgMeme" src="{{meme}}">
+</div>

@@ -1,0 +1,42 @@
+.table {
+  margin: 2%;
+  margin-left: 10%;
+  width: 80%;
+  box-shadow: 4px 4px 10px rgba(100, 69, 40, 0.719);
+}
+
+.table td {
+  border: 2px solid rgb(238, 161, 93);
+  background-color: #eeead4;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.table tr {
+  vertical-align: middle;
+}
+
+p {
+  margin: 5px;
+}
+
+.table .a {
+  color: rgb(92, 92, 92);
+}
+
+td {
+  width: auto;
+}
+
+@media screen and (max-width: 992px) {
+  .table {
+    display: block;
+    width: 96%;
+    margin: 2%;
+    word-wrap: break-word;
+  }
+
+  .table-responsive-sm {
+    max-width: 98%;
+  }
+}

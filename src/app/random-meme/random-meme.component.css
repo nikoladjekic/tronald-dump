@@ -1,0 +1,13 @@
+.imgMeme {
+  object-fit: cover;
+  width: 44%;
+  margin: 5%;
+}
+
+@media screen and (max-width: 992px) {
+  .imgMeme {
+    object-fit: cover;
+    width: 92%;
+    margin: 4%;
+  }
+} 

@@ -1,0 +1,17 @@
+.rdm-box {
+  border-radius: 5px 8px;
+  margin: 2% 20%;
+  border: 2px groove rgb(167, 80, 61);
+  padding: 10px;
+}
+
+.a {
+  color: rgb(92, 92, 92);
+}
+
+@media screen and (max-width: 992px) {
+  .rdm-box {
+    margin: 2% 3%;
+    word-wrap: break-word;
+  }
+}
