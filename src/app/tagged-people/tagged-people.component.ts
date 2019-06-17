@@ -16,6 +16,7 @@ export class TaggedPeopleComponent implements OnInit {
   shareTagModelData: SelectedTag[] = [];
   loading: boolean = false;
   loading2: boolean = false;
+  alreadyClicked: boolean = false;
 
 
   constructor(private service: GetQuotesService, public router: Router) { }
@@ -27,13 +28,19 @@ export class TaggedPeopleComponent implements OnInit {
 
   // get the list of all tags / "click to see all tags" button
   getAllTags(){
-    this.loading = true;
-    document.body.style.cursor = 'wait';
-    return this.service.getTagsService().subscribe(res => {
+    if (this.alreadyClicked) {
+      this.loading2 = true;
+      return this.service.getTagsService().subscribe(res => {
+      this.arr = res['_embedded'];
+      this.loading2 = false;
+    })}
+    else {
+      this.alreadyClicked = true;
+      this.loading = true;
+      return this.service.getTagsService().subscribe(res => {
       this.arr = res['_embedded'];
       this.loading = false;
-      document.body.style.cursor = 'default';
-    })
+    })}
   }
 
   // click on the specific name to get the list of all tweets for that tag

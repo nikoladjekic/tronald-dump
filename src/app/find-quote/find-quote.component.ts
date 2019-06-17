@@ -23,7 +23,9 @@ export class FindQuoteComponent implements OnInit {
 
   findQuote(keyword){
     if (!keyword) this.emptyInputMessage = "Please enter search keyword first"
-    this.loading = true;
+    else if (keyword.length < 3) this.emptyInputMessage = "Please type in at least three letters"
+    //this.loading = true;
+    else this.loading = true;
     return this.service.findQuoteService(keyword).subscribe(res => {
 
       // reset the search array every time the function is called

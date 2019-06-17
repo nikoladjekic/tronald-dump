@@ -4,6 +4,10 @@
   margin: 5%;
 }
 
+.memeBtn {
+  margin-bottom: -2.5%;
+}
+
 @media screen and (max-width: 992px) {
   .imgMeme {
     object-fit: cover;
